@@ -1,5 +1,11 @@
 // rock paper scissors
 
+function game(numberOfGames){
+
+
+for (let i=0; i<numberOfGames; i++){
+
+
 let choices = ["rock", "paper", "scissors"]
 let random = Math.random() * 3
 
@@ -15,68 +21,97 @@ console.log(`Computer's choice: ${computerChoice}`)
 // paper beats rock
 // scissors beats paper
 
+let actionObject = {
+    'rock':'scissors',
+    'paper':'rock',
+    'scissors': 'paper',
+}
 
-function determineWinner(action1, action2){
+determineWinner(userChoice, computerChoice)
 
-    if (action1 === action2){
-        return "Tie"
+
+function determineWinner(userAction, computerAction){
+
+    if (userAction === computerAction){
+        console.log( "Tie")
     }
 
-    if (action1 === 'rock'){ 
-
-        if (action2 === 'scissors'){
-            return action1
-
-        } else if (action2 === 'paper') {
-            return action2
-        }
+    if ( actionObject[userAction] === computerAction){
+        console.log( "User has won")
     } 
+    
+    else if ( actionObject[computerAction] === userAction) {
 
-    else if (action1 === 'scissors'){ 
-
-        if (action2 === 'rock'){
-            return action2
-            
-        } else if (action2 === 'paper') {
-            return action1
-        }
-
-    } else if (action1 === 'paper'){ 
-
-        if (action2 === 'rock'){
-            return action1
-            
-        } else if (action2 === 'scissors') {
-            return action2
-        }
-
+        console.log( "Computer has won")
     }
-
+    console.log("\n")
+}
+}
+    
 }
 
 
-if ( userChoice === 'rock' && computerChoice === 'scissors' ){
-    console.log("User wins")
+game(20)
 
-} else if ( userChoice === 'rock' && computerChoice === 'paper' ){
-    console.log("Computer wins")
 
-} else if ( userChoice === 'paper' && computerChoice === 'rock' ){
 
-    console.log("User wins")
 
-} else if ( userChoice === 'paper' && computerChoice === 'scissors' ){
+  // if (action1 === 'rock'){ 
 
-    console.log("Computer wins")
+    //     if (action2 === 'scissors'){
+    //         return action1
 
-} else if ( userChoice === 'scissors' && computerChoice === 'rock' ){
+    //     } else if (action2 === 'paper') {
+    //         return action2
+    //     }
+    // } 
 
-    console.log("Computer wins")
+    // else if (action1 === 'scissors'){ 
 
-} else if ( userChoice === 'scissors' && computerChoice === 'paper' ){
-    console.log("User wins")
+    //     if (action2 === 'rock'){
+    //         return action2
+            
+    //     } else if (action2 === 'paper') {
+    //         return action1
+    //     }
 
-} else {
+    // } else if (action1 === 'paper'){ 
 
-    console.log("It is a TIE")
-}
+    //     if (action2 === 'rock'){
+    //         return action1
+            
+    //     } else if (action2 === 'scissors') {
+    //         return action2
+    //     }
+
+    // }
+
+
+
+
+
+// if ( userChoice === 'rock' && computerChoice === 'scissors' ){
+//     console.log("User wins")
+
+// } else if ( userChoice === 'rock' && computerChoice === 'paper' ){
+//     console.log("Computer wins")
+
+// } else if ( userChoice === 'paper' && computerChoice === 'rock' ){
+
+//     console.log("User wins")
+
+// } else if ( userChoice === 'paper' && computerChoice === 'scissors' ){
+
+//     console.log("Computer wins")
+
+// } else if ( userChoice === 'scissors' && computerChoice === 'rock' ){
+
+//     console.log("Computer wins")
+
+// } else if ( userChoice === 'scissors' && computerChoice === 'paper' ){
+//     console.log("User wins")
+
+// } else {
+
+//     console.log("It is a TIE")
+// }
